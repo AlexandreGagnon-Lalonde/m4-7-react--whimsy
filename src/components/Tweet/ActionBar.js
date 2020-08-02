@@ -5,10 +5,10 @@ import LikeButton from "../LikeButton";
 import Action from "./Action";
 import TweetActionIcon from "./TweetActionIcon";
 
-import { TweetContext } from './TweetContext';
+import { TweetContext } from "./TweetContext";
 
 const ActionBar = ({ isRetweetedByCurrentUser, isLikedByCurrentUser }) => {
-  const { handleToggleLike } = React.useContext(
+  const { handleToggleLike, handleToggleTweet } = React.useContext(
     TweetContext
   );
 
@@ -17,7 +17,7 @@ const ActionBar = ({ isRetweetedByCurrentUser, isLikedByCurrentUser }) => {
       <Action color="rgb(27, 149, 224)" size={40}>
         <TweetActionIcon kind="reply" />
       </Action>
-      <Action color="rgb(23, 191, 99)" size={40}>
+      <Action color="rgb(23, 191, 99)" size={40} onClick={handleToggleTweet}>
         <TweetActionIcon
           kind="retweet"
           color={isRetweetedByCurrentUser ? "rgb(23, 191, 99)" : undefined}
