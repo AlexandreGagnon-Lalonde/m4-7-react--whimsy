@@ -4,13 +4,24 @@ import avatar from "../../assets/carmen-sandiego.png";
 
 var moment = require('moment');
 
+
+
 export const TweetProvider = ({ children }) => {
   const [numOfLikes, setNumOfLikes] = React.useState(460);
   const [numOfRetweets, setNumOfRetweets] = React.useState(65);
   const [isLiked, setIsLiked] = React.useState(false);
   const [isRetweeted, setIsRetweeted] = React.useState(false);
 
-
+  const handleToggleLike = () => {
+    console.log(isLiked)
+    if (isLiked) {
+      setNumOfLikes(numOfLikes - 1)
+      setIsLiked(false)
+    } else {
+      setNumOfLikes(numOfLikes + 1)
+      setIsLiked(true)
+    }
+  }
 
 
   const displayName = 'Carmen Sandiego';
@@ -32,7 +43,8 @@ export const TweetProvider = ({ children }) => {
         isLikedByCurrentUser,
         date,
         numOfLikes,
-        numOfRetweets
+        numOfRetweets,
+        handleToggleLike
       }}
     >
       {children}
