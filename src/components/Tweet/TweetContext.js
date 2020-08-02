@@ -2,6 +2,8 @@ import React from 'react';
 
 import avatar from "../../assets/carmen-sandiego.png";
 
+var moment = require('moment');
+
 export const TweetProvider = ({ children }) => {
   const displayName = 'Carmen Sandiego';
   const username = 'carmen-sandiego';
@@ -9,6 +11,7 @@ export const TweetProvider = ({ children }) => {
   const tweetContents = 'Where in the world am I?';
   const isRetweetedByCurrentUser = false;
   const isLikedByCurrentUser = false;
+  const date = `${moment().format('LT')} - ${moment().format('MMM Do, YYYY')}`;
 
   return (
     <TweetContext.Provider 
@@ -19,6 +22,7 @@ export const TweetProvider = ({ children }) => {
         tweetContents,
         isRetweetedByCurrentUser,
         isLikedByCurrentUser,
+        date,
       }}
     >
       {children}
