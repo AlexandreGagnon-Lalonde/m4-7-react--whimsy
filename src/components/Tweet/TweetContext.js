@@ -4,8 +4,6 @@ import avatar from "../../assets/carmen-sandiego.png";
 
 var moment = require('moment');
 
-
-
 export const TweetProvider = ({ children }) => {
   const [numOfLikes, setNumOfLikes] = React.useState(460);
   const [numOfRetweets, setNumOfRetweets] = React.useState(65);
@@ -22,7 +20,6 @@ export const TweetProvider = ({ children }) => {
     }
   }
   const handleToggleTweet = () => {
-    console.log(isRetweeted)
     if (isRetweeted) {
       setNumOfRetweets(numOfRetweets - 1)
       setIsRetweeted(false)
@@ -31,7 +28,6 @@ export const TweetProvider = ({ children }) => {
       setIsRetweeted(true)
     }
   }
-
 
   const displayName = 'Carmen Sandiego';
   const username = 'carmen-sandiego';
