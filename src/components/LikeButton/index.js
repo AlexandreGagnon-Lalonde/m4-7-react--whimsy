@@ -19,7 +19,7 @@ const LikeButton = ({ size = 40 }) => {
   return (
     <Wrapper style={{ width: size, height: size }}>
       {isLikedByCurrentUser && <PoppingCircle size={size} color="#E790F7" />}
-      {isLikedByCurrentUser &&
+      {/* {isLikedByCurrentUser &&
         range(12).map((i) => (
           <ConfettiPiece
             key={i}
@@ -27,7 +27,7 @@ const LikeButton = ({ size = 40 }) => {
             distance={20}
             color={PARTICLE_COLORS[0]}
           />
-        ))}
+        ))} */}
       {isLikedByCurrentUser ? (
         <ScaleIn>
           <Heart width={heartSize} isToggled={isLikedByCurrentUser} />
